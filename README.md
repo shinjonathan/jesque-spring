@@ -1,4 +1,4 @@
-Jesque-Spring
+Jesque - Spring
 =============
 [![Build Status](https://buildhive.cloudbees.com/job/lariverosc/job/jesque-spring/badge/icon)](https://buildhive.cloudbees.com/job/lariverosc/job/jesque-spring/)
 
