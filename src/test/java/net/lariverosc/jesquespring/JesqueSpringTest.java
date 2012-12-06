@@ -59,7 +59,7 @@ public class JesqueSpringTest {
 		Assert.assertEquals(0, queueInfoDAO.getPendingCount());
 		MockJob.JOB_COUNT = 0;
 		Job job = new Job(MockJob.class.getName(), new Object[]{});
-		for (int i = 1; i <= 10; i++) {
+		for (int i = 1; i <= 5; i++) {
 			jesqueClient.enqueue("JESQUE_QUEUE", job);
 			Assert.assertEquals(i, queueInfoDAO.getPendingCount());
 		}
@@ -67,32 +67,32 @@ public class JesqueSpringTest {
 		waitJob(5000);
 	}
 
-	@Test(timeOut = 5000)
+	@Test
 	public void shouldProcessJobsByClass() {
 		worker.togglePause(true);
 		Assert.assertEquals(0, queueInfoDAO.getPendingCount());
 		MockJob.JOB_COUNT = 0;
 		Job job = new Job(MockJob.class.getName(), new Object[]{});
-		for (int i = 1; i <= 10; i++) {
+		for (int i = 1; i <= 5; i++) {
 			jesqueClient.enqueue("JESQUE_QUEUE", job);
 		}
 		worker.togglePause(false);
-		waitJob(3000);
-		Assert.assertEquals(10, MockJob.JOB_COUNT);
+		waitJob(5000);
+		Assert.assertEquals(5, MockJob.JOB_COUNT);
 	}
 
-	@Test(timeOut = 5000)
+	@Test
 	public void shouldProcessJobsByBeanId() {
 		worker.togglePause(true);
 		Assert.assertEquals(0, queueInfoDAO.getPendingCount());
 		MockJob.JOB_COUNT = 0;
 		Job job = new Job("mockJob", new Object[]{});
-		for (int i = 1; i <= 10; i++) {
+		for (int i = 1; i <= 5; i++) {
 			jesqueClient.enqueue("JESQUE_QUEUE", job);
 		}
 		worker.togglePause(false);
-		waitJob(3000);
-		Assert.assertEquals(10, MockJob.JOB_COUNT);
+		waitJob(5000);
+		Assert.assertEquals(5, MockJob.JOB_COUNT);
 	}
 
 	@Test
@@ -102,7 +102,6 @@ public class JesqueSpringTest {
 		Job job = new Job(MockJob.class.getName(), args);
 		jesqueClient.enqueue("JESQUE_QUEUE", job);
 		worker.togglePause(false);
-
 	}
 
 	@Test
