@@ -84,7 +84,8 @@
 						<id>javadoc-jar</id>
 						<phase>package</phase>
 						<goals>
-							<goal>jar</goal>
+							<goal>jar</goal> 
+						</goals>
 					</execution>
 				</executions>
 			</plugin>
