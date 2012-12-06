@@ -10,6 +10,7 @@ import net.greghaines.jesque.meta.dao.QueueInfoDAO;
 import net.greghaines.jesque.meta.dao.WorkerInfoDAO;
 import net.greghaines.jesque.worker.Worker;
 import net.lariverosc.jesquespring.job.MockJob;
+import net.lariverosc.jesquespring.job.MockJobArgs;
 import net.lariverosc.jesquespring.job.MockJobFail;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
@@ -99,7 +100,7 @@ public class JesqueSpringTest {
 	public void shouldAddJobWithArguments() {
 		worker.togglePause(true);
 		Object[] args = new Object[]{1, 2.3, true, "test", Arrays.asList("inner", 4.5)};
-		Job job = new Job(MockJob.class.getName(), args);
+		Job job = new Job(MockJobArgs.class.getName(), args);
 		jesqueClient.enqueue("JESQUE_QUEUE", job);
 		worker.togglePause(false);
 	}
