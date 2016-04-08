@@ -3,7 +3,7 @@ package net.lariverosc.jesquespring.job;
 
 /**
  *
- * @author Alejandro Riveros Cruz <lariverosc@gmail.com>
+ * @author Alejandro <lariverosc@gmail.com>
  */
 public class MockJobFail implements Runnable{
 

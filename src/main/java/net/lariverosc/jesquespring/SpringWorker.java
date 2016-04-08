@@ -1,5 +1,5 @@
 /*
- * Copyright 2012 Alejandro Riveros Cruz <lariverosc@gmail.com>.
+ * Copyright 2012
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -31,7 +31,7 @@ import org.springframework.context.ApplicationContextAware;
 
 /**
  *
- * @author Alejandro Riveros Cruz <lariverosc@gmail.com>
+ * @author Alejandro <lariverosc@gmail.com>
  */
 public class SpringWorker extends WorkerImpl implements ApplicationContextAware {
 
